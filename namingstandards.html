@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>naming standards</title>
+</head>
+
+<body>
+<h1>1 常见命名规则</h1>
+
+<p>匈牙利命名法即微软的老式命名法，例如：lpszStr, 表示指向一个以'\0'结尾的字符串（sz）的长指针（lp）变量。</p>
+
+<p>骆驼命名法，例如：printEmployeePaychecks()，函数名中每一个逻辑断点都有一个大写字母来标记。</p>
+
+<p>帕斯卡命名法，例如：DisplayInfo()和UserName都是采用了帕斯卡命名法。</p>
+
+<p>UNIX/LIUNX下流行下划线法。</p>
+
+<h1>2 函数的命名</h1>
+
+<p>函数名使用下划线分割小写字母的方式命名：</br>
+
+设备名_操作名()</br>
+
+操作名一般采用：谓语（此时设备名作为宾语或者标明操作所属的模块）或者
+谓语+宾语/表语（此时设备名作为主语或者标明操作所属的模块） 等形式，如：</br>
+
+tic_init()</br>
+adc_is_busy()</br>
+uart_tx_char()</br>
+
+中断函数的命名直接使用 设备名_isr() 的形式命名，如：</br>
+timer2_isr()
+</p>
+
+<h1>3 变量的命名</h1>
+
+<p>变量的命名也采用下划线分割小写字母的方式命名。
+命名应当准确，不引起歧义，且长度适中。如：</br>
+int length;</br>
+uint32 test_offset;</r></p>
+
+<p>单字符的名字也是常用的，如i, j, k等，它们通常可用作函数内的局部变量。</p>
+
+<p>tmp常用做临时变量名。</p>
+
+<p>局部静态变量，应加s_词冠（表示static），如：
+static int s_lastw;</p>
+
+<p>全局变量（尤其是供外部访问的全局变量），应加g_词冠（表示global），如：
+void (* g_capture_hook)(void);</p>
+
+
+<h1>4 常量及宏的命名</h1>
+<p>
+采用下划线分割大写字母的方式命名，一般应以设备名作为前缀，
+防止模块间命名的重复。如：</br>
+
+#define TIMER0_MODE_RELOAD 2</br>
+#define TIMER2_COUNT_RETRIEVE(val) ((uint16)(65536 - (val)))</br>
+
+当然，看作接口的宏可以按照函数的命名方法命名，例如：</br>
+
+#define timer2_clear() (TF2 = 0)</br>
+#define timer0_is_expired() (TF0)</br>
+</p>
+
+<h1>5 常用缩写词</h1>
+
+原词 缩写</br>
+
+addition add</br>
+answer ans</br>
+array arr</br>
+average avg</br>
+buffer buf或buff</br>
+capture cap或capt</br>
+check chk</br>
+count cnt</br>
+column col</br>
+control ctrl</br>
+decode dec</br>
+define def</br>
+delete del</br>
+destination dst或dest</br>
+display disp</br>
+division div</br>
+encode enc</br>
+environment env</br>
+error err</br>
+float flt</br>
+frequency freq</br>
+header hdr</br>
+index idx</br>
+image img</br>
+increment inc</br>
+initalize init</br>
+iteration itr</br>
+length len</br>
+memory mem</br>
+middle mid</br>
+make mk</br>
+message msg</br>
+multiplication mul</br>
+number num</br>
+operand opnd</br>
+optimization opt</br>
+operator optr</br>
+packet pkt</br>
+positon pos</br>
+previous pre或prev</br>
+payload type pt</br>
+pointer ptr</br>
+return code rc</br>
+record rcd</br>
+receive recv</br>
+result res</br>
+return ret</br>
+source src</br>
+stack stk</br>
+string str</br>
+subtraction sub</br>
+table tab</br>
+temporary tmp或temp</br>
+total tot</br>
+time stamp ts</br>
+value val</br>
+</body>
+
+</html>
